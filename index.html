@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NextGen Game Store</title>
+        
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="logo2.png" alt="NextGen" class="logo me-2" width="80px">
+                    NextGen Games Store
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Games Store</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about us.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="text-center py-5" id="header">
+        </header>
+
+        <div id="gamesstore">
+            <div class="container">
+                <h2 class="text-center mb-4 text-white">Our Collection</h2>
+                <h3 class="text-center mb-4 text-white" id="pageTitle"></h3>
+                
+                <table class="table table-bordered table-hover text-center bg-white text-dark">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Type</th>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody id="gamesTable">
+                        <!-- Game Collection -->
+                        <tr>
+                            <td>DISC (PS4)</td>
+                            <td><img src="cyberpunk.jpg" class="game-img img-thumbnail" width="130px"></td>
+                            <td>Cyberpunk 2077</td>
+                            <td>$29.99</td>
+                            <td><a href="product.html?product=1" class="btn btn-primary">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>DISC (Nintendo Switch)</td>
+                            <td><img src="animalcrossing.jpg" class="game-img img-thumbnail" width="130px"></td>
+                            <td>Animal Crossing</td>
+                            <td>$49.99</td>
+                            <td><a href="product.html?product=2" class="btn btn-primary">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>DISC (PS4)</td>
+                            <td><img src="milesmorales.jpg" class="game-img img-thumbnail" width="130px"></td>
+                            <td>Marvel Spider-Man Miles Morales</td>
+                            <td>$39.99</td>
+                            <td><a href="product.html?product=3" class="btn btn-primary">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>DISC (PS5)</td>
+                            <td><img src="spiderman2.jfif" class="game-img img-thumbnail" width="130px"></td>
+                            <td>Marvel Spider-Man 2</td>
+                            <td>$69.99</td>
+                            <td><a href="product.html?product=4" class="btn btn-primary">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>DISC (PS5)</td>
+                            <td><img src="blackmyth.jpg" class="game-img img-thumbnail" width="130px"></td>
+                            <td>BlackMyth Wukong</td>
+                            <td>$79.99</td>
+                            <td><a href="product.html?product=5" class="btn btn-primary">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>DISC (PS4)</td>
+                            <td><img src="blackops6.jfif" class="game-img img-thumbnail" width="130px"></td>
+                            <td>Call Of Duty Black Ops 6</td>
+                            <td>$69.99</td>
+                            <td><a href="product.html?product=6" class="btn btn-primary">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>DISC (PS5)</td>
+                            <td><img src="streetfighter6.jfif" class="game-img img-thumbnail" width="130px"></td>
+                            <td>Street Fighter 6</td>
+                            <td>$49.99</td>
+                            <td><a href="product.html?product=7" class="btn btn-primary">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>DISC (Nintendo Switch)</td>
+                            <td><img src="zelda.png" class="game-img img-thumbnail" width="130px"></td>
+                            <td>The Legend of Zelda: Tears of the Kingdom</td>
+                            <td>$59.99</td>
+                            <td><a href="product.html?product=8" class="btn btn-primary">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>DISC (Xbox X series / Xbox One)</td>
+                            <td><img src="forzahorizon.jpg" class="game-img img-thumbnail" width="130px"></td>
+                            <td>Forza Horizon 6</td>
+                            <td>$54.99</td>
+                            <td><a href="product.html?product=9" class="btn btn-primary">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>DISC (Xbox X series / Xbox One)</td>
+                            <td><img src="senuas.png" class="game-img img-thumbnail" width="130px"></td>
+                            <td>Senua's Saga: Hellblade II</td>
+                            <td>$59.99</td>
+                            <td><a href="product.html?product=10" class="btn btn-primary">View</a></td>
+                        </tr>
+
+                        <!-- Page 2: Accessories Collection -->
+                        <tr>
+                            <td>PS4</td>
+                            <td><img src="Ds4controller.png" class="game-img img-thumbnail" width="130px"></td>
+                            <td>PS4 Controller</td>
+                            <td>$49.99</td>
+                            <td><a href="product.html?product=12" class="btn btn-primary">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>PC / Console</td>
+                            <td><img src="gamingheadset.png" class="game-img img-thumbnail" width="130px"></td>
+                            <td>Gaming Headset</td>
+                            <td>$69.99</td>
+                            <td><a href="product.html?product=13" class="btn btn-primary">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>PC / Console</td>
+                            <td><img src="Keyboard.png" class="game-img img-thumbnail" width="130px"></td>
+                            <td>Mechanical Keyboard</td>
+                            <td>$89.99</td>
+                            <td><a href="product.html?product=14" class="btn btn-primary">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>PC / Console</td>
+                            <td><img src="gamingmouse.png" class="game-img img-thumbnail" width="130px"></td>
+                            <td>Gaming Mouse</td>
+                            <td>$59.99</td>
+                            <td><a href="product.html?product=15" class="btn btn-primary">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>PS4 VR</td>
+                            <td><img src="VrHeadset.png" class="game-img img-thumbnail" width="130px"></td>
+                            <td>VR Headset</td>
+                            <td>$299.99</td>
+                            <td><a href="product.html?product=16" class="btn btn-primary">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>PS4</td>
+                            <td><img src="ps4cable.png" class="game-img img-thumbnail" width="130px"></td>
+                            <td>Ps4 Cable</td>
+                            <td>$7.69</td>
+                            <td><a href="product.html?product=17" class="btn btn-primary">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>PC</td>
+                            <td><img src="Gamingchair.png" class="game-img img-thumbnail" width="130px"></td>
+                            <td>Gaming Chair</td>
+                            <td>$199.99</td>
+                            <td><a href="product.html?product=18" class="btn btn-primary">View</a></td>
+                        </tr>
+                    </tbody>
+
+
+                    
+                </table>
+
+                <!-- Pagination Buttons -->
+                <div id="pagination" class="text-center mt-3"></div>
+            </div>
+        </div>
+
+        <footer class="text-white text-center py-3 mt-4" id="contact">
+            <p>Contact Us: lanceoboza17@gmail.com | Phone: 09934029664</p>
+        </footer>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="pagination.js"></script>
+    </body>
+</html>
+
+
+
+

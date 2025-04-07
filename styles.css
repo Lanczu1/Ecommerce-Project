@@ -1,0 +1,120 @@
+body {
+    background: linear-gradient(135deg, #64592d, #e28e56, #854231);
+    background-size: 400% 400%;
+    animation: gradientBG 8s ease infinite;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Animation for a smooth gradient transition */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+nav {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand{
+    color: white !important;  
+}
+
+
+.navbar-brand img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.2);
+}
+
+
+.navbar-nav .nav-link {
+    color: white;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0D47A1; 
+    transform: scale(1.1); 
+}
+
+
+#navbarNav{
+    font-size: 20px;
+}
+
+.container{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+    padding: 30px;
+}
+
+h2.text-center {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+
+#gamesTable table tbody tr td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+.game-img {
+    display: block;
+    margin: auto;
+    max-width: 80px;
+    height: auto;
+    border-radius: 10px; 
+}
+
+
+#gamesTable table {
+    border-radius: 12px;
+    overflow: hidden; 
+    padding-bottom: 20px;
+}
+
+
+#gamesTable table, #gamesstore th, #gamesstore td {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+footer{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 1000px) {
+    .navbar-nav .nav-link {
+        color: white;
+        transition: none;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: #0D47A1; 
+        transform: none; 
+    }
+}
+
+

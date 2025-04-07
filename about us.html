@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NextGen Game Store</title>
+        
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            html, body {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+
+            
+            .header-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 1500px;
+                width: 90%; 
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border-radius: 15px;
+                padding: 20px; 
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                color: white;
+            }
+
+
+            .content {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                padding: 40px;
+            }
+
+
+            @media (max-width: 768px) {
+                .header-container {
+                    flex-direction: column;
+                    text-align: center;
+                    width: 95%;
+                    padding: 20px;
+                }
+
+                .header-container img {
+                    width: 50%;
+                    max-width: 250px;
+                    margin-bottom: 20px;
+                }
+
+                .header-text {
+                    text-align: center;
+                    padding-left: 0;
+                    font-size: 18px; 
+                }
+            }
+
+
+
+            footer {
+                color: white;
+                padding: 15px;
+                text-align: center;
+                margin-top: auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="logo2.png" alt="NextGen" class="logo me-2" width="80px">
+                    NextGen Games Store
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Games Store</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about us.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        
+         <div class="content">
+            <div class="header-container">
+                <img src="logo2.png" alt="NextGen Games" width="500px">
+
+                <div class="header-text">
+                    <h2>About US</h2>
+                    <p class="lead">Welcome to NextGen Games Store, your ultimate destination for the latest and greatest in gaming! We are passionate gamers dedicated to bringing you the best selection of video games, consoles, and accessories.<br>
+
+                        <br>Our Story
+                        <br>NextGen Games Store was founded with one goal in mind—to create a haven for gamers of all kinds. From retro classics to cutting-edge releases, we strive to offer a curated selection that caters to casual players and hardcore enthusiasts alike.<br>
+                        
+                        <br>Our Mission
+                        <br>Our mission is to connect gamers with the best products, services, and experiences. Whether you're looking for the hottest new titles, rare collectibles, or expert advice, we’re here to help.<br>
+                        
+                        <br>Our Values
+                        <br>🎮 Passion for Gaming – We live and breathe video games, and we love sharing that passion with our customers.
+                        <br>🛒 Quality & Selection – We handpick our inventory to ensure top-quality games and accessories.
+                        <br>🤝 Community & Support – Gaming is better together! We support and engage with our gaming community through events, online forums, and customer service that goes above and beyond.
+                        
+                        At NextGen Games Store, gaming isn’t just a hobby—it’s a way of life. Join us and level up your gaming experience!</p>
+                </div>
+            </div>
+        </div>
+
+        <footer id="contact">
+            <p>Contact Us: lanceoboza17@gmail.com | Phone: 09934029664</p>
+        </footer>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="pagination.js"></script>
+    </body>
+</html>

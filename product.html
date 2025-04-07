@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .center-container {
+            flex: 1; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px; 
+            min-height: 70vh;
+        }
+
+        .product-box {
+            width: 90%; 
+            max-width: 450px; 
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: left; 
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-img {
+            width: 100%;
+            max-width: 250px;
+            margin-bottom: 20px; 
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product-box {
+                width: 95%; 
+                padding: 15px;
+            }
+            
+            .product-img {
+                max-width: 200px; 
+                margin: 0 auto 15px; 
+            }
+
+            h2, h4, p {
+                text-align: center; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="logo2.png" alt="NextGen" class="logo me-2" width="80px">
+                NextGen Game Store
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Games Store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about us.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div class="center-container">
+        <div class="product-box">
+            <img id="product-image" src="" class="product-img img-fluid rounded shadow-lg" alt="Product Image">
+            <h2 id="product-title"></h2>
+            <h4 class="text-primary" id="product-price"></h4>
+            <p id="product-description" class="text-muted"></p>
+            <a href="index.html#gamesstore" class="btn btn-primary mt-3">Back to Store</a>
+            <button class="btn btn-success w-100 my-2" onclick="addToCart()">Add to Cart</button>
+            <button class="btn btn-primary w-100 my-2" data-bs-toggle="modal" data-bs-target="#paymentModal">Buy Now</button>
+
+        </div>
+    </div>
+    
+    <div class="modal fade" id="paymentModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modal-product-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Price: <span id="modal-product-price"></span></p>
+                    <button class="btn btn-success w-100" onclick="processPayment()">Confirm Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer class="text-center text-white py-3 mt-5" id="contact">
+        <p>Contact Us: lanceoboza17@gmail.com | Phone: 09934029664</p>
+    </footer>
+
+    <script>
+       const params = new URLSearchParams(window.location.search);
+       const productId = params.get("product");
+
+        const products = {
+            1: { title: "Cyberpunk 2077", price: "$29.99", img: "cyberpunk.jpg", 
+            description: "Cyberpunk 2077 is an open-world, action-adventure RPG set in the megalopolis of Night City, where you play as a cyberpunk mercenary wrapped-up in a do-or-die fight for survival" },
+
+            2: { title: "Animal Crossing", price: "$49.99", img: "animalcrossing.jpg", 
+            description: "In New Horizons, the player controls a character who moves to a deserted island after purchasing a getaway package from Tom Nook, accomplishes assigned tasks, and develops the island as they choose." },
+
+            3: { title: "Marvel Spider-Man Miles Morales", price: "$39.99", img: "milesmorales.jpg", 
+            description: "Marvel's Spider-Man: Miles Morales is a 2020 action-adventure game developed by Insomniac Games and published by Sony Interactive Entertainment" },
+
+            4: { title: "Marvel Spider-Man 2", price: "$69.99", img: "spiderman2.jfif", 
+            description: "Spider-Men Peter Parker and Miles Morales face the ultimate test of strength inside and outside the mask as they fight to save the city, each other and the ones they love, from the monstrous Venom and the dangerous new symbiote threat." },
+
+            5: { title: "BlackMyth Wukong", price: "$79.99", img: "blackmyth.jpg", 
+            description: "Black Myth: Wukong is an action role-playing game. It has elements characteristic to the Soulslike subgenre. The game is played in single-player mode from a third-person perspective." },
+
+            6: { title: "Call Of Duty Black Ops 6", price: "$69.99", img: "blackops6.jfif", 
+            description: "In Black Ops 6 Multiplayer, players will test their skills across 16 new maps at launch, including 12 core 6v6 maps and 4 Strike maps that can be played 2v2 or 6v6" },
+
+            7: { title: "Street Fighter 6", price: "$49.99", img: "streetfighter6.jfif", 
+            description: " Street Fighter 6 supports cross-platform play and rollback netcode. It offers three overarching game modes and three control options" },
+
+            8: { title: "The Legend of Zelda: Tears of the Kingdom", price: "$59.99", img: "zelda.png", 
+            description: "The Legend of Zelda, electronic action-adventure game franchise in which players take on the role of a young adventurer named Link, who often must assist a princess named Zelda in stopping the evil Ganon (in his monstrous pig form, Ganondorf in his human form) from cursing the magical land of Hyrule." },
+
+            9: { title: "Forza Horizon 6", price: "$54.99", img: "forzahorizon.jpg", 
+            description: "Forza Horizon 6 is expected to launch simultaneously on PC and Xbox Series X|S, in line with Microsoft's platform strategy. PC players are expected to be able to enjoy the full Horizon 6 experience without owning an Xbox, complete with “Cross-play” and cross-save features for seamless platform switching." },
+
+            10: { title: "Senua's Saga: Hellblade II", price: "$59.99", img: "senuas.png", 
+            description: "Senua's Saga: Hellblade II is a third-person action-adventure game. It carries over the concepts and gameplay elements of its predecessor, utilizing puzzles and runes to advance, and an examination of Senua's mental state. A new fighting system is also incorporated." },
+
+            12: { title: "PS4 Controller", price: "$49.99", img: "Ds4controller.png", 
+            description: "A wireless PS4 controller with precision control, built-in speaker, and touchpad functionality." },
+
+            13: { title: "Gaming Headset", price: "$69.99", img: "gamingheadset.png", 
+            description: "Immersive sound and crystal-clear communication for competitive gaming across all platforms." },
+
+            14: { title: "Mechanical Keyboard", price: "$89.99", img: "Keyboard.png", 
+            description: "RGB mechanical keyboard with tactile keys, anti-ghosting, and customizable macros." },
+
+            15: { title: "Gaming Mouse", price: "$59.99", img: "gamingmouse.png", 
+            description: "High-precision gaming mouse with adjustable DPI and programmable buttons for ultimate control." },
+
+            16: { title: "VR Headset", price: "$299.99", img: "VrHeadset.png", 
+            description: "Immersive VR headset for PS4 with motion tracking and 3D audio." },
+
+            17: { title: "PS4 Cable", price: "$7.69", img: "ps4cable.png", 
+            description: "High-speed PS4 charging cable for reliable and fast charging during gameplay." },
+
+            18: { title: "Gaming Chair", price: "$199.99", img: "Gamingchair.png", 
+            description: "Ergonomic gaming chair with adjustable height, lumbar support, and smooth rolling wheels." }
+
+        };
+
+
+        
+        if (productId && products[productId]) {
+            document.getElementById("product-title").textContent = products[productId].title;
+            document.getElementById("product-price").textContent = products[productId].price;
+            document.getElementById("product-description").textContent = products[productId].description;
+            document.getElementById("product-image").src = products[productId].img;
+        } else {
+            document.querySelector(".center-container").innerHTML = `<h2 class="text-center text-danger">Product not found!</h2>`;
+        }
+
+        function addToCart() {
+            const product = products[productId];
+            if (!product) {
+                alert("Product not found.");
+                return;
+            }
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            const existingIndex = cart.findIndex(item => item.title === product.title);
+
+            if (existingIndex !== -1) {
+                cart[existingIndex].quantity += 1;
+            } else {
+                cart.push({
+                    title: product.title,
+                    price: product.price,
+                    img: product.img,
+                    description: product.description,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Product added to cart!");
+        }
+
+
+        document.getElementById("paymentModal").addEventListener('show.bs.modal', function () {
+            document.getElementById("modal-product-title").textContent = products[productId].title;
+            document.getElementById("modal-product-price").textContent = products[productId].price;
+        });
+
+        function processPayment() {
+            alert("Payment Successful!");
+            document.querySelector(".btn-close").click();
+        }
+
+        
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
